@@ -12,8 +12,10 @@ const mongoDB = process.env.MONGO_URI;
 //Connecting to mongoose.
 async function mongooseConnect() {
     try {
-        await mongoose.connect(mongoDB, {dbName: process.env.MONGODB});
-        console.log('MongoDB Connected through Mongoose');
+        await mongoose.connect(mongoDB, {dbName: process.env.MONGODB1});
+        console.log('MongoDB User database Connected through Mongoose');
+        await mongoose.connect(mongoDB, {dbName: process.env.MONGODB2});
+        console.log('MongoDB Blogs databse Connected through Mongoose')
     } catch (err) {
        throw err;
     }
